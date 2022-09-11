@@ -15,6 +15,7 @@ import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
 import CollectionsOutlinedIcon from "@mui/icons-material/CollectionsOutlined";
 
 const Post = (props) => {
+  const { user, text, imageUrl } = props.post;
   return (
     <Box bgcolor={"#fff"} p={2} borderRadius=".4em" m={2}>
       {/* Post Header */}
@@ -28,14 +29,14 @@ const Post = (props) => {
           <Avatar
             sx={{ width: 56, height: 56 }}
             alt="profile picture"
-            src={props.post.user.imageUrl}
+            src={user.imageUrl}
           />
           <Stack spacing={0.5}>
             <Typography variant="p" fontWeight={600}>
-              {props.post.user.name.first + " " + props.post.user.name.last}
+              {user.name.first + " " + user.name.last}
             </Typography>
             <Typography variant="p" color={"#9AB1BD"} fontSize=".8em">
-              {props.post.user.position}
+              {user.position}
             </Typography>
           </Stack>
         </Box>
@@ -48,17 +49,18 @@ const Post = (props) => {
       {/* Post Description */}
       <Box sx={{ p: "15px 0" }}>
         <Typography variant="p" color={"#9AB1BD"} fontWeight={300}>
-          {props.post.text}
+          {text}
         </Typography>
       </Box>
       {/* Post Image */}
       <Box>
         <img
-          src={props.post.imageUrl}
+          src={imageUrl}
           style={{
             width: "100%",
             boxShadow: "0px 8px 30px 0px rgba(0,0,0,0.10)",
           }}
+          alt="Post"
         />
       </Box>
       {/* Post Actions */}
@@ -93,7 +95,7 @@ const Post = (props) => {
         <Avatar
           sx={{ width: 30, height: 30 }}
           alt="profile picture"
-          src={props.post.user.imageUrl}
+          src={user.imageUrl}
         />
         <Box
           display="flex"
