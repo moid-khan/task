@@ -1,3 +1,15 @@
 body {
   background: #f3f8fb;
+  font-family: "Roboto", sans-serif;
+}
+
+.comment {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.comment::placeholder {
+  color: #9ab1bd;
 }
